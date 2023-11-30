@@ -3,6 +3,8 @@ import AddressLink from "./ui/AddressLink";
 import { FaHeart } from "react-icons/fa";
 import RatingsBar from "./ui/RatingsBar";
 import { Map } from "leaflet";
+import CheckBooking from "./ui/CheckBooking";
+import CheckFlights from "./ui/CheckFlights";
 
 interface TouristAttractionProps {
   recommendation: {
@@ -42,7 +44,7 @@ const TouristAttraction: React.FC<TouristAttractionProps> = ({
         <FaHeart className="color-red-500" />
       </div>
 
-      <div className="flex text-sky-900 flex-col flex-1 gap-1">
+      <div className="flex text-sky-900 flex-col flex-1 gap-1 relative h-100">
         <div className="flex justify-between gap-2">
           <h3 className="font-extrabold text-slate-800 border-b border-slate-800">
             {name}
@@ -63,9 +65,9 @@ const TouristAttraction: React.FC<TouristAttractionProps> = ({
           mapRef={mapRef}
         />
 
-        <div className="flex self-end gap-1 mt-1">
-          {/* <CheckFlights />
-          <CheckBooking /> */}
+        <div className="flex self-end gap-1 mt-1 h-100 absolute bottom-2">
+          <CheckFlights />
+          <CheckBooking address={formatted_address} />
         </div>
       </div>
     </div>

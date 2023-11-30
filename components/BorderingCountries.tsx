@@ -61,7 +61,7 @@ const BorderingCountries: FC<BorderingCountriesProps> = ({ borders }) => {
     const { data } = await axios.get(`
     https://restcountries.com/v3.1/name/${name.toLowerCase()}`);
 
-    setCountryDataHandler(...data);
+    setCountryDataHandler(data[0]);
     setSelectedCountryHandler(name);
   }
 
@@ -73,7 +73,7 @@ const BorderingCountries: FC<BorderingCountriesProps> = ({ borders }) => {
         variants={container}
         initial="hidden"
         animate="show"
-        key={borderingCountries}
+        key={borders ? borders.join(",") : "loading"}
       >
         {borderingCountries?.map((country, i) => {
           return (

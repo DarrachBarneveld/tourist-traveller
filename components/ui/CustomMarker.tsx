@@ -6,7 +6,6 @@ import { PlacesContext } from "@/context/PlacesContext";
 
 interface CustomMarkerProps {
   locationFly: () => void;
-  index: number;
   marker: {
     geometry: {
       location: LatLngExpression;
@@ -26,11 +25,7 @@ export const redMarker = new Icon({
   shadowSize: [41, 41],
 });
 
-const CustomMarker: React.FC<CustomMarkerProps> = ({
-  locationFly,
-  index,
-  marker,
-}) => {
+const CustomMarker: React.FC<CustomMarkerProps> = ({ locationFly, marker }) => {
   const placesCtx = useContext(PlacesContext);
 
   return (
@@ -41,7 +36,6 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
           placesCtx.setRecommendedPlacesHandler([marker]);
         },
       }}
-      key={index}
       position={marker.geometry.location}
       icon={redMarker}
     >
