@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 
 import TouristAttraction from "./TouristAttraction";
 import { PlacesContext } from "@/context/PlacesContext";
+import { Map } from "leaflet";
 
 interface RecommendationsProps {
-  mapRef: React.RefObject<any>;
+  mapRef: Map;
 }
 
 const Recommendations: React.FC<RecommendationsProps> = ({ mapRef }) => {
@@ -27,8 +28,6 @@ const Recommendations: React.FC<RecommendationsProps> = ({ mapRef }) => {
     hidden: { opacity: 0, x: 100 },
     show: { opacity: 1, x: 0 },
   };
-
-  console.log(recommendedPlaces);
 
   return (
     <div className="flex flex-col gap-1">

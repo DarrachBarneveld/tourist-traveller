@@ -1,14 +1,15 @@
 "use client";
 
-import { FunctionComponent, useContext, useEffect, useMemo } from "react";
-import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
-import { Map as LeafletMap } from "leaflet";
+import { FunctionComponent, useContext, useMemo } from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { Map as LeafletMap, Map } from "leaflet";
 import { CountryContext } from "@/context/CountryContext";
+import { redMarker } from "../ui/CustomMarker";
 
 interface CountryMapProps {
   zoom: number;
-  setMapRef: (ref: React.RefObject<LeafletMap> | null) => void;
-  mapRef: React.RefObject<LeafletMap> | null;
+  setMapRef: (ref: Map) => void;
+  mapRef: Map | undefined;
 }
 
 const CountryMap: FunctionComponent<CountryMapProps> = ({
@@ -23,7 +24,7 @@ const CountryMap: FunctionComponent<CountryMapProps> = ({
     if (Object.keys(countryData).length === 0) return;
 
     return (
-      <Marker position={coords}>
+      <Marker position={coords} icon={redMarker}>
         <Popup>
           {countryData?.name?.common}
           <br />

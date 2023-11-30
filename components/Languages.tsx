@@ -1,7 +1,7 @@
 import React from "react";
 
 interface LanguagesProps {
-  languages: string[];
+  languages: any[];
 }
 
 const Languages: React.FC<LanguagesProps> = ({ languages }) => {

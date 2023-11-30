@@ -1,10 +1,11 @@
+import { Map } from "leaflet";
 import React, { useCallback, RefObject } from "react";
 
 interface AddressLinkProps {
   formatted_address: string;
   location: { lat: number; lng: number };
   name: string;
-  mapRef: RefObject<any>;
+  mapRef: Map;
 }
 
 const AddressLink: React.FC<AddressLinkProps> = ({
@@ -13,7 +14,9 @@ const AddressLink: React.FC<AddressLinkProps> = ({
   mapRef,
 }) => {
   const moveToLocationHandler = useCallback(() => {
-    mapRef.current.flyTo(location, 13);
+    if (mapRef) {
+      mapRef.flyTo(location, 13);
+    }
   }, [location, mapRef]);
 
   return (

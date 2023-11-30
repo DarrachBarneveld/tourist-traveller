@@ -1,13 +1,7 @@
 "use-client";
 
 import axios from "axios";
-import {
-  createContext,
-  useEffect,
-  useState,
-  ReactNode,
-  useContext,
-} from "react";
+import { createContext, useEffect, useState, ReactNode } from "react";
 import { Map as LeafletMap } from "leaflet";
 
 interface CountryContextProps {
@@ -45,7 +39,7 @@ const CountryContextProvider: React.FC<CountryContextProviderProps> = ({
         `https://restcountries.com/v3.1/name/ireland`
       );
 
-      setCountryData(...data);
+      setCountryData(data[0]);
     }
 
     fetchInitialCountry();

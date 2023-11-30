@@ -32,8 +32,6 @@ const CountryStatistics: React.FC = () => {
     show: { opacity: 1, x: 0 },
   };
 
-  console.log(countryData);
-
   if (!languages) return;
 
   const languageArray = Object.values(languages);

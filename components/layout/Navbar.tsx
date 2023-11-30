@@ -8,9 +8,10 @@ import IconButton from "../ui/IconButton";
 import { PlacesContext } from "@/context/PlacesContext";
 import { CountryContext } from "@/context/CountryContext";
 import { useContext } from "react";
+import { Map } from "leaflet";
 
 interface NavBarProps {
-  mapRef: React.RefObject<any>;
+  mapRef: Map;
   setView: React.Dispatch<React.SetStateAction<boolean>>;
 }
 

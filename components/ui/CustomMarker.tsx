@@ -15,7 +15,7 @@ interface CustomMarkerProps {
   };
 }
 
-const redMarker = new Icon({
+export const redMarker = new Icon({
   iconUrl:
     "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
   shadowUrl:

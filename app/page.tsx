@@ -1,14 +1,14 @@
 "use client";
 
 import { RefObject, useState } from "react";
-import { Map } from "leaflet";
+import { Map as LeafletMap, Map } from "leaflet";
 import CountryMap from "@/components/map";
 import Layout from "@/components/layout/Layout";
 import CountryContextProvider from "@/context/CountryContext";
 import PlacesContextProvider from "@/context/PlacesContext";
 
 function App() {
-  const [mapRef, setMapRef] = useState<RefObject<Map> | null>(null);
+  const [mapRef, setMapRef] = useState<LeafletMap | undefined>(undefined);
 
   return (
     <PlacesContextProvider>

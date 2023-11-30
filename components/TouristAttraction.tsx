@@ -2,6 +2,7 @@ import React from "react";
 import AddressLink from "./ui/AddressLink";
 import { FaHeart } from "react-icons/fa";
 import RatingsBar from "./ui/RatingsBar";
+import { Map } from "leaflet";
 
 interface TouristAttractionProps {
   recommendation: {
@@ -12,7 +13,7 @@ interface TouristAttractionProps {
     user_ratings_total: number;
     geometry: { location: { lat: number; lng: number } };
   };
-  mapRef: React.RefObject<any>; // Replace 'any' with the actual type of your mapRef
+  mapRef: Map;
 }
 
 const TouristAttraction: React.FC<TouristAttractionProps> = ({
