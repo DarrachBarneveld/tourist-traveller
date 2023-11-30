@@ -19,12 +19,10 @@ async function fetchBorderingCountries(borders: any[]) {
 }
 
 interface BorderingCountriesProps {
-  borders: string[] | undefined;
+  borders: string[];
 }
 
 const BorderingCountries: FC<BorderingCountriesProps> = ({ borders }) => {
-  if (!borders) return null;
-
   const { setCountryDataHandler, setSelectedCountryHandler } =
     useContext(CountryContext);
   const [borderingCountries, setBorderingCountries] = useState<any[]>();

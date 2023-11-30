@@ -74,7 +74,7 @@ const CountryStatistics: React.FC = () => {
           </motion.div>
         </motion.div>
       </div>
-      <BorderingCountries borders={borders} />
+      {borders && <BorderingCountries borders={borders} />}
     </div>
   );
 };

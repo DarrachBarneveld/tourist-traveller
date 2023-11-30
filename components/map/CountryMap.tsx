@@ -39,7 +39,6 @@ const CountryMap: FunctionComponent<CountryMapProps> = ({
   function RecommendationMarkers() {
     const map = useMap();
 
-    console.log("fire");
     return (
       recommendedPlaces.length > 0 &&
       recommendedPlaces.map((place, index) => {
@@ -53,8 +52,6 @@ const CountryMap: FunctionComponent<CountryMapProps> = ({
       })
     );
   }
-
-  console.log(recommendedPlaces);
 
   const displayMap = useMemo(
     () => (
