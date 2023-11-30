@@ -36,5 +36,3 @@ const CountrySelector: FunctionComponent<CountrySelectorProps> = ({
 };
 
 export default CountrySelector;
-
-// className="p-1 w-6/12 text-lg font-bold text-sky-950 border hover:border-blue-500 hover:cursor-pointer rounded-md border-slate-400 w-100"

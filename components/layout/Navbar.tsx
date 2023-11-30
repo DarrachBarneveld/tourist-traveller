@@ -21,7 +21,9 @@ const NavBar: React.FC<NavBarProps> = ({ mapRef, setView }) => {
 
   async function fetchGoogleAPIHandler() {
     try {
-      const { data } = await axios.post("/api");
+      const { data } = await axios.post("/api", {
+        query: countryCtx.selectedCountry,
+      });
 
       placesCtx.updatedRecommendationHandler(!placesCtx.updatedRecommendation);
 
