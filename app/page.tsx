@@ -1,6 +1,6 @@
 "use client";
 
-import { RefObject, useState } from "react";
+import { useState } from "react";
 import { Map as LeafletMap, Map } from "leaflet";
 import CountryMap from "@/components/map";
 import Layout from "@/components/layout/Layout";
@@ -13,7 +13,7 @@ function App() {
   return (
     <PlacesContextProvider>
       <CountryContextProvider>
-        <main className="grid grid-cols-2 min-h-screen min-w-full bg-neutral-200">
+        <main className="grid grid-cols-2 min-h-screen min-w-full bg-stone-300 p-2">
           <CountryMap zoom={7} setMapRef={setMapRef} mapRef={mapRef} />
           <Layout mapRef={mapRef} />
         </main>

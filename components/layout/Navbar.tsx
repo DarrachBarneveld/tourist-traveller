@@ -33,7 +33,7 @@ const NavBar: React.FC<NavBarProps> = ({ mapRef, setView }) => {
   }
 
   return (
-    <header className="flex gap-2 bg-slate-200 shadow-md p-2 m-2 rounded-sm justify-between">
+    <header className="flex gap-2 bg-slate-300 shadow-md p-2 m-2 rounded-lg justify-between">
       <CountrySelector mapRef={mapRef} />
       <div className="flex justify-evenly w-100 gap-2">
         <IconButton

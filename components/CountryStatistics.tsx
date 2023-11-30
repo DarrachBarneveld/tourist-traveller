@@ -5,6 +5,7 @@ import Languages from "./Languages";
 import { CountryContext } from "@/context/CountryContext";
 import Statistic from "./ui/Statistic";
 import { numberWithCommas } from "@/lib/helpers";
+import BorderingCountries from "./BorderingCountries";
 
 const CountryStatistics: React.FC = () => {
   const countryCtx = useContext(CountryContext);
@@ -73,6 +74,7 @@ const CountryStatistics: React.FC = () => {
           </motion.div>
         </motion.div>
       </div>
+      <BorderingCountries borders={borders} />
     </div>
   );
 };

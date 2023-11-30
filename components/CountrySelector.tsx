@@ -30,8 +30,6 @@ const CountrySelector: FunctionComponent<CountrySelectorProps> = ({
     }
   }
 
-  console.log(mapRef);
-
   return (
     <CountryDropdown value={selectedCountry} onChange={fetchCountryData} />
   );
