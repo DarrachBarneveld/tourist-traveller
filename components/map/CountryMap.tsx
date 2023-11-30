@@ -19,6 +19,19 @@ const CountryMap: FunctionComponent<CountryMapProps> = ({
   const { countryData } = useContext(CountryContext);
   const coords = countryData?.latlng;
 
+  function CountryMarker() {
+    if (Object.keys(countryData).length === 0) return;
+
+    return (
+      <Marker position={coords}>
+        <Popup>
+          {countryData?.name?.common}
+          <br />
+        </Popup>
+      </Marker>
+    );
+  }
+
   const displayMap = useMemo(
     () => (
       <MapContainer
@@ -32,6 +45,7 @@ const CountryMap: FunctionComponent<CountryMapProps> = ({
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        <CountryMarker />
       </MapContainer>
     ),
     [, coords]

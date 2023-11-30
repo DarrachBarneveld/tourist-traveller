@@ -28,7 +28,7 @@ const RatingsBar: React.FC<RatingsBarProps> = ({ rating }) => {
 
   return (
     <motion.div
-      className="w-[100px] h-[20px] rounded-lg bg-sky-900 p-1 flex"
+      className="w-[100px] h-[20px] rounded-lg gap-[1px] bg-sky-600 p-[2px] flex"
       variants={container}
       initial="hidden"
       animate="show"
@@ -36,7 +36,7 @@ const RatingsBar: React.FC<RatingsBarProps> = ({ rating }) => {
       {ratingArray.map((star, index) => (
         <motion.div
           key={index}
-          className="w-[20px] aspect-square rounded-full bg-green-500"
+          className="w-[19px] rounded-full bg-green-400"
           variants={child}
         />
       ))}
